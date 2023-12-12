@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomView);
         frameLayout = findViewById(R.id.frameLayout);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -40,27 +38,38 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.navHome) {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.frameLayout, new HomeFragment());
-                    fragmentTransaction.commit();
+                    loadFragment(new HomeFragment(), false);
                 }
                 else if (itemId == R.id.navProfile) {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.frameLayout, new ProfileFragment());
-                    fragmentTransaction.commit();
+                    loadFragment(new ProfileFragment(), false);
+
                 } else if (itemId == R.id.navSettings) {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.frameLayout, new SearchFragment());
-                    fragmentTransaction.commit();
+                    loadFragment(new SearchFragment(), false);
 
                 }
+                loadFragment(new HomeFragment(), true);
 
-                return false;
+                return true;
             }
+            private void loadFragment (Fragment fragment, boolean isAppInitialized) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                if(isAppInitialized) {
+                    fragmentTransaction.add(R.id.frameLayout, fragment);
+                } else {
+                    fragmentTransaction.replace(R.id.frameLayout, fragment);
+                }
+
+                fragmentTransaction.replace(R.id.frameLayout, fragment);
+                fragmentTransaction.commit();
+            }
+
+
         });
+
+
+
 
 
         auth = FirebaseAuth.getInstance();

@@ -26,15 +26,14 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_weight="1"
-
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomView"
         app:menu="@menu/bottom_nav_menu"
-        app:itemPaddingBottom="5dp"
+
         android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
