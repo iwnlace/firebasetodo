@@ -43,14 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 else if (itemId == R.id.navProfile) {
                     loadFragment(new ProfileFragment(), false);
 
-                } else if (itemId == R.id.navSettings) {
+                } else {
                     loadFragment(new SearchFragment(), false);
-
                 }
                 loadFragment(new HomeFragment(), true);
-
                 return true;
             }
+
             private void loadFragment (Fragment fragment, boolean isAppInitialized) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -69,9 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-
         auth = FirebaseAuth.getInstance();
         button = findViewById(R.id.logout);
         textView = findViewById(R.id.user_details);
@@ -81,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        else {
-            textView.setText(user.getEmail());
-        }
+
 
         button.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
