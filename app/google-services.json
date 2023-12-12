@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "63309174937",
+    "project_id": "platform-based-developme-cd73d",
+    "storage_bucket": "platform-based-developme-cd73d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63309174937:android:12b1c8bb31f41af5fb8008",
+        "android_client_info": {
+          "package_name": "com.example.firebasetest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8iu4EyzT9LR0fNwPWhVsnZ2JZxc4NCOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63309174937:android:6a93fe98f2ecdd19fb8008",
+        "android_client_info": {
+          "package_name": "com.example.platformbaseddev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8iu4EyzT9LR0fNwPWhVsnZ2JZxc4NCOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63309174937:android:975291d83d4e7b8ffb8008",
+        "android_client_info": {
+          "package_name": "com.example.platformbaseddevelopment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8iu4EyzT9LR0fNwPWhVsnZ2JZxc4NCOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
