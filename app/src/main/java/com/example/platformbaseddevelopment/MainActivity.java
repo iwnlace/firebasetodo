@@ -2,6 +2,10 @@ package com.example.platformbaseddevelopment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -35,10 +39,29 @@ public class MainActivity extends AppCompatActivity {
 
                 int itemId = item.getItemId();
 
+                if (itemId == R.id.navHome) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new HomeFragment());
+                    fragmentTransaction.commit();
+                }
+                else if (itemId == R.id.navProfile) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new ProfileFragment());
+                    fragmentTransaction.commit();
+                } else if (itemId == R.id.navSettings) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new SearchFragment());
+                    fragmentTransaction.commit();
+
+                }
 
                 return false;
             }
         });
+
 
         auth = FirebaseAuth.getInstance();
         button = findViewById(R.id.logout);
@@ -59,5 +82,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
     }
 }
