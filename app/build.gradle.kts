@@ -4,6 +4,12 @@ plugins {
     id("com.google.gms.google-services")
 }
 android {
+
+    buildFeatures {
+        compose = true
+    }
+
+
     namespace = "com.example.platformbaseddevelopment"
     compileSdk = 34
 
@@ -40,7 +46,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
     packaging {
         resources {
