@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RecyclerView tasksRecyclerView;
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
     FirebaseAuth auth;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         bottomNavigationView = findViewById(R.id.bottomView);
         frameLayout = findViewById(R.id.frameLayout);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
