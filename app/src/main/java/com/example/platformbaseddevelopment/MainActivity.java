@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         bottomNavigationView = findViewById(R.id.bottomView);
         frameLayout = findViewById(R.id.frameLayout);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     loadFragment(new SearchFragment(), false);
                 }
-                loadFragment(new HomeFragment(), true);
+
                 return true;
             }
 
@@ -61,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     fragmentTransaction.replace(R.id.frameLayout, fragment);
                 }
-
-                fragmentTransaction.replace(R.id.frameLayout, fragment);
                 fragmentTransaction.commit();
             }
 
